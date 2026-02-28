@@ -22,10 +22,10 @@ const { title, jobs } = Astro.props as Props;
         jobs.map((job) => (
             <ul>
                 <li class="mb-4 grid grid-cols-1 md:grid-cols-10">
-                    <span class="opacity-50 text-[0.87rem] col-span-2">
+                    <span class="opacity-50 text-[0.87rem] col-span-3 whitespace-nowrap">
                         {job.period}
                     </span>
-                    <div class="col-span-8">
+                    <div class="col-span-7">
                         <div>
                             <span>{job.role}</span>
                             <span class="opacity-50">|</span>
