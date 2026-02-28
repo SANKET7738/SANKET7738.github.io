@@ -1,0 +1,25 @@
+---
+interface Props {
+    name: string;
+    title: string;
+    subtitle?: string;
+    p1: string;
+    p2: string;
+    p3: string;
+}
+
+const { name, title, subtitle, p1, p2, p3 } = Astro.props as Props;
+---
+
+<section id="about" class="mb-10 mt-50">
+    <h1 class="mb-4 font-semibold text-xl">{name}</h1>
+    <div class="[&_p]:mb-6 leading-7">
+        <p>
+            <span class="text-green-500">{title}</span>
+            {subtitle && <span class="opacity-50"> {subtitle}</span>}
+        </p>
+        <p class="opacity-50">{p1}</p>
+        <p class="opacity-50">{p2}</p>
+        <p class="opacity-50">{p3}</p>
+    </div>
+</section>

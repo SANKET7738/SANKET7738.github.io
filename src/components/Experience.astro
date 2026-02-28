@@ -1,0 +1,42 @@
+---
+interface JobExp {
+    period: string;
+    role: string;
+    company: string;
+    description: string;
+}
+
+interface Props {
+    title: string;
+    jobs: JobExp[];
+}
+
+const { title, jobs } = Astro.props as Props;
+---
+
+<section id={title.toLowerCase()} class="scroll-mt-50">
+    <h2 class="opacity-50 uppercase mb-6 mt-15">
+        {title}
+    </h2>
+    {
+        jobs.map((job) => (
+            <ul>
+                <li class="mb-4 grid grid-cols-1 md:grid-cols-10">
+                    <span class="opacity-50 text-[0.87rem] col-span-2">
+                        {job.period}
+                    </span>
+                    <div class="col-span-8">
+                        <div>
+                            <span>{job.role}</span>
+                            <span class="opacity-50">|</span>
+                            <span>{job.company}</span>
+                        </div>
+                        <p class="text-[0.87rem] opacity-50">
+                            {job.description}
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        ))
+    }
+</section>

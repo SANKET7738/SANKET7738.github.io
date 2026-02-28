@@ -1,0 +1,56 @@
+---
+interface Props {
+    status: string;
+    id: string;
+    email_label?: string;
+    email_url?: string;
+    github_label?: string;
+    github_url?: string;
+    x_label?: string;
+    x_url?: string;
+    linkedin_label?: string;
+    linkedin_url?: string;
+}
+
+const { status, email_label, email_url, github_label, github_url, x_label, x_url, linkedin_label, linkedin_url, id } = Astro.props as Props;
+---
+
+<footer
+    id={id}
+    class="my-24 border-t pt-8 text-sm grid grid-cols-1 gap-3 place-items-center"
+>
+    <div>
+        <span
+            class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"
+        ></span>
+        <span class="opacity-70 uppercase">{status}</span>
+        <span
+            class="inline-block w-2 h-2 rounded-full bg-green-500 ml-2 animate-pulse"
+        ></span>
+    </div>
+    <div class="flex gap-4 [&_a]:opacity-70 [&_a]:hover:opacity-100 [&_a]:transition-colors [&_a]:duration-200">
+        {email_url && email_label && (
+            <a href={email_url}>
+                {email_label}
+            </a>
+        )}
+
+        {github_url && github_label && (
+            <a href={github_url} rel="nofollow">
+                {github_label}
+            </a>
+        )}
+
+        {x_url && x_label && (
+            <a href={x_url} rel="nofollow">
+                {x_label}
+            </a>
+        )}
+
+        {linkedin_url && linkedin_label && (
+            <a href={linkedin_url} rel="nofollow">
+                {linkedin_label}
+            </a>
+        )}
+    </div>
+</footer>

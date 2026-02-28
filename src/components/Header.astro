@@ -1,0 +1,25 @@
+---
+import { cls } from "@/src/lib/utils";
+
+interface Props {
+    nav: { path: string; text: string }[];
+}
+
+const { nav } = Astro.props as Props;
+---
+
+<header class="py-15 flex items-center justify-between flex-col md:flex-row fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40">
+    <div class="flex items-center gap-5 order-2 md:order-1">
+        {
+            nav.map((item) => (
+                <a
+                    class="opacity-50 transition-all duration-200 hover:opacity-100 text-[1rem] md:text-[0.85rem]"
+                    href={item.path}
+                >
+                    {item.text}
+                </a>
+            ))
+        }
+    </div>
+    <div class="absolute -bottom-10 left-0 w-full h-18  pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"></div>
+</header>

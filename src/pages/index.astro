@@ -1,0 +1,75 @@
+---
+import Layout from "@/src/layouts/Layout.astro";
+import Header from "@/src/components/Header.astro";
+import Hero from "@/src/components/Hero.astro";
+import Experience from "@/src/components/Experience.astro";
+import Footer from "@/src/components/Footer.astro";
+
+const nav = [
+  { path: "/", text: "about" },
+  { path: "#experience", text: "experience" },
+  { path: "#contact", text: "contact" },
+];
+
+const heroProps = {
+  name: "Sanket Mhatre",
+  title: "Research Fellow",
+  subtitle: "tinkering with llms and exploring ai research. currently at microsoft.",
+  p1: "helped github evaluate their coding agents and now training models to understand excel formulas.",
+  p2: "previously, i led the gen ai team at pocketfm after starting there as a backend developer. before that, i interned at trell and a few other early-stage startups.",
+  p3: "i'm also trying to find my way into ai safety research.",
+};
+
+const experienceData = {
+  title: "experience",
+  jobs: [
+    {
+      period: "dec 2024 — now",
+      role: "Research Fellow",
+      company: "Microsoft Research",
+      description: "fine-tuning llms for excel and github copilot. built swe-sharp-bench, a c# coding benchmark. won best paper at aiware 2025.",
+    },
+    {
+      period: "sep 2022 — nov 2024",
+      role: "SDE-1 → SDE-2",
+      company: "PocketFM",
+      description: "led the gen ai team. built ai audio and video content pipelines. scaled automated content generation to 500 hrs/week.",
+    },
+    {
+      period: "oct 2021 — apr 2022",
+      role: "SDE Intern",
+      company: "Trell",
+      description: "backend engineering intern.",
+    },
+    {
+      period: "aug 2021 — oct 2021",
+      role: "Backend Developer Intern",
+      company: "Zhiffy",
+      description: "backend engineering intern.",
+    },
+  ],
+};
+
+const footerContent = {
+  id: "contact",
+  status: "open to research collaborations",
+  email_label: "email",
+  email_url: "mailto:sanketmhatre7738@gmail.com",
+  github_label: "github",
+  github_url: "https://github.com/SANKET7738",
+  linkedin_label: "linkedin",
+  linkedin_url: "https://linkedin.com/in/sanket-mhatre-782a081a6",
+};
+---
+
+<Layout
+  title="sanket mhatre"
+  description="research fellow at microsoft research. backend engineer exploring ai research, llm fine-tuning, and ai safety."
+>
+  <Header nav={nav} />
+  <main>
+    <Hero {...heroProps} />
+    <Experience {...experienceData} />
+  </main>
+  <Footer {...footerContent} />
+</Layout>
