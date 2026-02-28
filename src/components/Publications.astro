@@ -21,10 +21,8 @@ const { papers } = Astro.props as Props;
             <ul>
                 <li class="mb-4">
                     <div>
-                        <a href={paper.url} target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity duration-200">
-                            {paper.title}
-                        </a>
-                        <span class="opacity-50 text-[0.87rem]"> [{paper.tag}]</span>
+                        <span>{paper.title}</span>
+                        <a href={paper.url} target="_blank" rel="noopener" class="opacity-50 text-[0.87rem] hover:opacity-100 transition-opacity duration-200"> [{paper.tag}]</a>
                     </div>
                     <p class="text-[0.87rem] opacity-50">{paper.authors}</p>
                     <p class="text-[0.87rem] opacity-50">{paper.venue}</p>
