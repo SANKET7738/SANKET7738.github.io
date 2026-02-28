@@ -3,11 +3,13 @@ import Layout from "@/src/layouts/Layout.astro";
 import Header from "@/src/components/Header.astro";
 import Hero from "@/src/components/Hero.astro";
 import Experience from "@/src/components/Experience.astro";
+import Publications from "@/src/components/Publications.astro";
 import Footer from "@/src/components/Footer.astro";
 
 const nav = [
   { path: "/", text: "about" },
   { path: "#experience", text: "experience" },
+  { path: "#publications", text: "publications" },
   { path: "#contact", text: "contact" },
 ];
 
@@ -50,6 +52,30 @@ const experienceData = {
   ],
 };
 
+const publicationsData = [
+  {
+    title: "UnWEIRDing LLM Entity Recommendations",
+    url: "https://arxiv.org/abs/2511.18403",
+    tag: "arxiv",
+    authors: "Aayush Kumar*, Sanket Mhatre*",
+    venue: "AAAI 2026, LM4UC Workshop",
+  },
+  {
+    title: "SWE-Sharp-Bench: A Reproducible Benchmark for C# Software Engineering Tasks",
+    url: "https://ieeexplore.ieee.org/abstract/document/11334589",
+    tag: "ieee",
+    authors: "Sanket Mhatre*, Yasharth Bajpai*, Sumit Gulwani, Emerson Murphy-Hill, Gustavo Soares",
+    venue: "Best Paper Award, AIWare 2025",
+  },
+  {
+    title: "A Hybrid Method for Fake News Detection using Cosine Similarity Scores",
+    url: "https://ieeexplore.ieee.org/abstract/document/9510134",
+    tag: "ieee",
+    authors: "S. Mhatre, A. Masurkar",
+    venue: "ICCICT 2021",
+  },
+];
+
 const footerContent = {
   id: "contact",
   status: "open to research collaborations",
@@ -59,6 +85,8 @@ const footerContent = {
   github_url: "https://github.com/SANKET7738",
   linkedin_label: "linkedin",
   linkedin_url: "https://linkedin.com/in/sanket-mhatre-782a081a6",
+  scholar_label: "scholar",
+  scholar_url: "https://scholar.google.com/citations?user=wV4CBqcAAAAJ&hl=en",
 };
 ---
 
@@ -70,6 +98,7 @@ const footerContent = {
   <main>
     <Hero {...heroProps} />
     <Experience {...experienceData} />
+    <Publications papers={publicationsData} />
   </main>
   <Footer {...footerContent} />
 </Layout>

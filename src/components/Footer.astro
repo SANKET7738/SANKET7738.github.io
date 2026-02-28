@@ -6,13 +6,13 @@ interface Props {
     email_url?: string;
     github_label?: string;
     github_url?: string;
-    x_label?: string;
-    x_url?: string;
     linkedin_label?: string;
     linkedin_url?: string;
+    scholar_label?: string;
+    scholar_url?: string;
 }
 
-const { status, email_label, email_url, github_label, github_url, x_label, x_url, linkedin_label, linkedin_url, id } = Astro.props as Props;
+const { status, email_label, email_url, github_label, github_url, linkedin_label, linkedin_url, scholar_label, scholar_url, id } = Astro.props as Props;
 ---
 
 <footer
@@ -41,15 +41,15 @@ const { status, email_label, email_url, github_label, github_url, x_label, x_url
             </a>
         )}
 
-        {x_url && x_label && (
-            <a href={x_url} rel="nofollow">
-                {x_label}
-            </a>
-        )}
-
         {linkedin_url && linkedin_label && (
             <a href={linkedin_url} rel="nofollow">
                 {linkedin_label}
+            </a>
+        )}
+
+        {scholar_url && scholar_label && (
+            <a href={scholar_url} rel="nofollow">
+                {scholar_label}
             </a>
         )}
     </div>

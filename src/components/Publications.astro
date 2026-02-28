@@ -1,0 +1,35 @@
+---
+interface Paper {
+    title: string;
+    url: string;
+    tag: string;
+    authors: string;
+    venue: string;
+}
+
+interface Props {
+    papers: Paper[];
+}
+
+const { papers } = Astro.props as Props;
+---
+
+<section id="publications" class="scroll-mt-50">
+    <h2 class="opacity-50 uppercase mb-6 mt-15">publications</h2>
+    {
+        papers.map((paper) => (
+            <ul>
+                <li class="mb-4">
+                    <div>
+                        <a href={paper.url} target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity duration-200">
+                            {paper.title}
+                        </a>
+                        <span class="opacity-50 text-[0.87rem]"> [{paper.tag}]</span>
+                    </div>
+                    <p class="text-[0.87rem] opacity-50">{paper.authors}</p>
+                    <p class="text-[0.87rem] opacity-50">{paper.venue}</p>
+                </li>
+            </ul>
+        ))
+    }
+</section>
