@@ -5,6 +5,7 @@ interface Paper {
     tag: string;
     authors: string;
     venue: string;
+    mentionedBy?: { label: string; url: string }[];
 }
 
 interface Props {
@@ -26,6 +27,17 @@ const { papers } = Astro.props as Props;
                     </div>
                     <p class="text-[0.87rem] opacity-50">{paper.authors}</p>
                     <p class="text-[0.87rem] opacity-50">{paper.venue}</p>
+                    {paper.mentionedBy && (
+                        <p class="text-[0.87rem] opacity-50">
+                            mentioned by:{" "}
+                            {paper.mentionedBy.map((m, i) => (
+                                <>
+                                    <a href={m.url} target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity duration-200">{m.label}</a>
+                                    {i < paper.mentionedBy!.length - 1 && ", "}
+                                </>
+                            ))}
+                        </p>
+                    )}
                 </li>
             </ul>
         ))

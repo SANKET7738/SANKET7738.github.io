@@ -16,9 +16,9 @@ const nav = [
 
 const heroProps = {
   name: "Sanket Mhatre",
-  title: "Research Fellow",
-  subtitle: "at microsoft research.",
-  p1: "tinkering with llms and exploring ai research. helped github evaluate their coding agents and now training models to understand excel formulas.",
+  title: "MTS",
+  subtitle: "at proximal.",
+  p1: "researcher at proximal working on evals. previously at microsoft research, helped github evaluate their coding agents and trained models to understand excel formulas.",
   p2: "previously, i led the gen ai team at pocketfm after starting there as a backend developer. before that, i interned at trell and a few other early-stage startups.",
   p3: "i'm also trying to find my way into ai safety research.",
 };
@@ -54,6 +54,18 @@ const experienceData = {
 };
 
 const publicationsData = [
+  {
+    title: "FrontierSWE v2: Evaluating AI on Ultra-Long Horizon Software Engineering Tasks",
+    url: "https://www.frontierswe.com/blog/v2",
+    tag: "blog",
+    authors: "Rishyanth Kondra*, Sanket Mhatre*, Akshit Kumar*, et al.",
+    venue: "Proximal, 2026",
+    mentionedBy: [
+      { label: "Fable 5.1", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1" },
+      { label: "Kimi K3", url: "https://www.kimi.ai/blog/kimi-k3" },
+      { label: "Opus 4.8", url: "https://www.anthropic.com/news/claude-opus-4-8" },
+    ],
+  },
   {
     title: "UnWEIRDing LLM Entity Recommendations",
     url: "https://arxiv.org/abs/2511.18403",
@@ -93,7 +105,7 @@ const footerContent = {
 
 <Layout
   title="sanket mhatre"
-  description="research fellow at microsoft research. backend engineer exploring ai research, llm fine-tuning, and ai safety."
+  description="mts at proximal. researcher working on evals, llm fine-tuning, and ai safety."
 >
   <Header nav={nav} />
   <main>
